@@ -9,6 +9,33 @@ import Masthead from './masthead/masthead'
 import Home from "../routes/home/home";
 let new_scroll_position = 0;
 class App extends Component {
+    componentDidMount() {
+        window.addEventListener("scroll", this.handleScroll);
+        document.querySelector("#branding__logo").classList.add("branding__logo-alt");
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener("scroll", this.handleScroll);
+    }
+
+    handleScroll = () => {
+        const NAV_NODE = document.querySelector("#masthead");
+        let last_scroll_position = window.scrollY;
+        if (
+            new_scroll_position < last_scroll_position &&
+            last_scroll_position > 50
+        ) {
+            NAV_NODE.classList.remove("isvisible");
+            new_scroll_position = window.scrollY;
+        } else if (new_scroll_position > last_scroll_position) {
+            NAV_NODE.classList.add("isvisible");
+        }
+        new_scroll_position = last_scroll_position;
+    };
+
+    vibrateOnClick() {
+        return navigator.vibrate(100);
+    }
     render() {
         return (
             <div id="root">

@@ -4,7 +4,6 @@ import Helmet from "preact-helmet";
 import * as timeago from "timeago.js";
 import lozad from "lozad";
 
-
 export default class Home extends Component {
   componentDidMount() {
     window.scroll({ top: 0, left: 0, behavior: 'smooth' });
@@ -106,9 +105,10 @@ export default class Home extends Component {
       <main>
 
         <Helmet title="My Title Hay James" />
+        <header>
         <div class="video-header">
           <video class="masthead-video" src={require("../../video/intro2.mp4")} autoplay loop playsinline muted poster={require("../../img/s3-news-tmp-77017-pulp-fiction-053--2x1--940.jpg").src}></video>
-        </div>
+          </div>
         <div data-opacity="250" data-delay="1000" data-timeout="1200" class="masthead-arrow">
           <svg viewBox="0 0 32 32">
             <title>arrow</title>
@@ -116,6 +116,8 @@ export default class Home extends Component {
             <path fill="#100" d="M23.955 13.921c-0.271-0.271-0.723-0.362-0.994-0.090l-6.96 5.785-6.96-5.785c-0.271-0.271-0.723-0.271-0.994 0.090-0.271 0.271-0.181 0.723 0.090 0.994l7.412 6.147c0.090 0.090 0.271 0.181 0.452 0.181s0.362-0.090 0.452-0.181l7.412-6.147c0.362-0.271 0.362-0.723 0.090-0.994z"></path>
           </svg>
         </div>
+        
+        </header>
 
 
         <div>
