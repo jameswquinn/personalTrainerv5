@@ -3,18 +3,15 @@ import { h, Component, render } from "preact";
 import { Router } from "preact-router";
 import AsyncRoute from 'preact-async-route';
 
+import '../style/style.css'
 import Nav from './nav/nav';
 import Masthead from './masthead/masthead'
 import Home from "../routes/home/home";
-
-export default class App extends Component {
-    componentDidMount() {}
-
-    componentWillUnmount() {}
-
+let new_scroll_position = 0;
+class App extends Component {
     render() {
         return (
-            <div>
+            <div id="root">
                 <Masthead/>
                 <Nav/>
                 <Router>

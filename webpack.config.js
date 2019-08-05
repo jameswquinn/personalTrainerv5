@@ -150,7 +150,7 @@ const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
 module.exports = {
   mode: "production",
   entry: {
-    bundle: ["./src/index"]
+    bundle: ["./src/components/app"]
   },
   resolve: {
     extensions: [".mjs", ".js", ".jsx", ".ts", ".tsx"],

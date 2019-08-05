@@ -1,8 +1,6 @@
 /** @jsx h */
 import { h, Component, render } from "preact";
 
-let new_scroll_position = 0;
-
 export default class Masthead extends Component {
     componentDidMount() {
         window.addEventListener("scroll", this.handleScroll);
@@ -31,7 +29,6 @@ export default class Masthead extends Component {
     vibrateOnClick() {
         return navigator.vibrate(100);
     }
-
     render() {
         return (
                 <div id="masthead">
